@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="optionEins.css">
+</head>
+
+<body id="bodyStyle">
+    <header>
+        <div id="nameWbseite">Meine Geschichte</div>
+        <div id="options">
+            <a id="darkmode" onclick="ClikDarkMode() ">Dark Mode</a>
+            <a id="hellMode" onclick="ClikhellMode() ">Light Mode</a>
+        </div>
+    </header>
+    <main>
+        <div id="sidebar">
+            <div id="inhalSidebar">
+                <p>Heute werden wir zusammen eine kleine Geschichte schreiben und du wirst der Held dieser Geschichte
+                    sein.
+                    Bist du einverstanden? (JA/NEIN)</p>
+                <input onclick="meineGeschichteStart() " type="radio" name="janein" value="ja">
+                <label for="ja">Ja</label><br>
+                <input onclick="meineGeschichteStart() " type="radio" name="janein" value="nein">
+                <label for="nein">Nein</label><br>
+
+
+                <div id="nameStadt">
+                    <label class="infoStart">Wie heißt du, tapferer Held?</label><br>
+                    <input class="infoStart" type="text" placeholder="Your Name" id="nameId"><br><br>
+                    <label class="infoStart">Was ist deine Lieblingsstadt?</label><br>
+                    <input class="infoStart" type="text" placeholder="Lieblingsstadt" id="nameStadtId"><br><br>
+                    <button onclick="showGeshishte() " class="infoStart">Ok</button>
+
+                </div>
+                <div id="monster">
+                    <p id="instruction">Welches Monster willst du bekämpfen? (Drache, Ork, Goblin)</p>
+                    <img src="drache.webp" onmouseover="bigImg(this)" onmouseout="smallImg(this)" onclick="drache()"
+                        alt="drache" width="100px">
+                    <img src="ork.png" onmouseover="bigImg(this)" onmouseout="smallImg(this)" onclick="ork()" alt="ork"
+                        width="100px">
+                    <img src="goblin.png" onmouseover="bigImg(this)" onmouseout="smallImg(this)" onclick="goblin()"
+                        alt="goblin" width="100px">
+
+                </div>
+
+            </div>
+        </div>
+        <div id="mainGeschichte">
+
+            <p id="geschichte"></p>
+            <button id="weiter" onclick="gehWeiter()">Weiter</button>
+            <p id="instructionChoice"></p>
+            <div id="waelen">
+                <input onclick="bkaempfen() " type="radio" name="bekampfen" value="bekampfen">
+                <label for="bekampfen">Bekämpfen</label><br>
+                <input onclick="weglaufen() " type="radio" name="bekampfen" value="weglaufen">
+                <label for="weglaufen">Weglaufen</label><br>
+
+            </div>
+            <p id="msgBekampfen"></p>
+
+            <div id="schlagDiv">
+                <input onclick="schlag() " type="radio" name="schlag" value="schlag">
+                <label for="schlag">Schlag</label><br>
+                <input onclick="warten() " type="radio" name="schlag" value="warten">
+                <label for="warten">Warten</label><br>
+
+            </div>
+            <p id="msgSchlag"></p>
+            <p id="imgbekampfenWeglaufen"></p>
+        </div>
+
+
+    </main>
+
+    <script src="optionEins.js"></script>
+</body>
+
+</html>
