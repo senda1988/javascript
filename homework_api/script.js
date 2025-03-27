@@ -20,14 +20,16 @@ function randomCat() {
 randombtn.addEventListener("click", randomCat)
 
 function helloWorldCat() {
-    fetch("https://cataas.com/cat")
+    const catId = document.getElementById("catsay").value;
+    fetch(`https://cataas.com/cat`)
         .then(res => res.json())
 
-    const url = "https://cataas.com/cat/says/Hello%20World?position=center&width=400&height=400&fontSize=50&fontColor=%23fff"
+    const url = `https://cataas.com/cat/says/${catId}?fontColor=%23fff`
     const imgTag = document.createElement('img')
     imgTag.src = url
     image.innerHTML = ''
     image.appendChild(imgTag)
+
 
 
 

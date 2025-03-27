@@ -1,5 +1,8 @@
 const express = require("express");
 const app = express();
+const cheerio = require("cheerio");
+
+
 
 let person = [{ id: 1, name: "Senda", Adress: "Regensbur" },
 { id: 2, name: "Test", Adress: "TestAdress" }
@@ -41,8 +44,15 @@ app.get("/division", (req, res) => {
 
 });
 
+app.get("/cheerio", (req, res) => {
+    const html = '<ul id="fruits"><li>Apfel</li><li>Banane</li></ul>';
+    const $ = cheerio.load(html);
 
+    const firstItem = $("#fruits li").first().text(); // "Apfel"
 
-app.listen(3000, () => {
+    res.send("Erstes Element der Liste: " + firstItem);
+});
+
+app.listen(3060, () => {
     console.log("Server läuft auf http://localhost:3000");
 });
