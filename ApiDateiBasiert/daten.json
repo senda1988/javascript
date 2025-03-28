@@ -1,0 +1,14 @@
+[
+  {
+    "id": 1,
+    "name": "Kaffeevollautomat",
+    "preis": 400,
+    "farbe": "Silber"
+  },
+  {
+    "id": 4,
+    "name": "T-Shirt",
+    "preis": 29.99,
+    "farbe": "Blau"
+  }
+]
