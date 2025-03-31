@@ -103,26 +103,37 @@ app.delete("/produkte/:id", (req, res) => {
 app.get("/produkte/search", (req, res) => {
     try {
         const allProdukte = readFile();
-        const name = req.query.name;
-        const preis = req.query.preis;
-        const foundProdukt = allProdukte.filter(produkt => produkt.name.includes(name))
-        const foundProduktPreis = allProdukte.filter(produkt => produkt.preis <= preis)
-        if (foundProduktPreis) {
-            res.json(foundProduktPreis)
+        let { name, preis } = req.query;
+        let filteredProdukte = allProdukte;
+
+        // Vérifier et filtrer par nom
+        if (name) {
+            name = name.toLowerCase();
+            filteredProdukte = filteredProdukte.filter(produkt =>
+                produkt.name.toLowerCase().includes(name)
+            );
         }
 
-
-        if (foundProdukt) {
-            res.json(foundProdukt)
-        } else {
-            res.send("kein produkt mit diesem name")
+        // Vérifier et filtrer par prix
+        if (preis) {
+            const preisNumber = parseFloat(preis);
+            if (!isNaN(preisNumber)) {
+                filteredProdukte = filteredProdukte.filter(produkt =>
+                    produkt.preis <= preisNumber
+                );
+            }
         }
+
+        // Vérifier si des produits ont été trouvés
+        if (filteredProdukte.length === 0) {
+            return res.status(404).json({ message: "Kein Produkt gefunden" });
+        }
+
+        res.json(filteredProdukte);
     } catch (err) {
-        res.status(500).res.json({ Error: `Internal Server Error: ${err}` })
+        res.status(500).json({ error: `Internal Server Error: ${err.message}` });
     }
-})
-
-
+});
 
 
 
