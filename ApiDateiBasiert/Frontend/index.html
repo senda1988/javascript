@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Produkte</title>
+    <script src="script.js" defer></script>
+</head>
+
+<body>
+    <h1>Homepage Produkte</h1>
+    <form id="form">
+        <input type="text" id="produktname" placeholder="Produktname...">
+        <input type="number" id="produktpreis" placeholder="Preis des Produkts...">
+        <input type="text" id="produktfarbe" placeholder="Farbe des Produkts..">
+        <button type="submit" id="submitId">Produkt hinzufügen</button>
+    </form>
+    <h2>Suche nach Produktname</h2>
+    <form id="formSearch">
+        <input type="text" id="produktnameFilter" placeholder="Produktname...">
+
+        <button id="filterKaffe">Kaffeemaschine anzeigen</button>
+    </form>
+
+    <div id="result"></div>
+
+    <h2>Result Suche nach Produktname</h2>
+    <div id="resultFilter"></div>
+</body>
+
+</html>

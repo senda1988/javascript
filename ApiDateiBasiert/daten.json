@@ -3,12 +3,49 @@
     "id": 1,
     "name": "Kaffeevollautomat",
     "preis": 400,
-    "farbe": "Silber"
+    "farbe": "Silber",
+    "numberprodukte": 1
   },
   {
     "id": 4,
     "name": "T-Shirt",
     "preis": 29.99,
-    "farbe": "Blau"
+    "farbe": "Blau",
+    "numberprodukte": 7
+  },
+  {
+    "id": 3,
+    "name": "T-Shirt",
+    "preis": 40,
+    "farbe": "Blau",
+    "numberprodukte": 4
+  },
+  {
+    "id": 4,
+    "name": "Test",
+    "preis": 29.99,
+    "farbe": "Rot",
+    "numberprodukte": 1
+  },
+  {
+    "id": 5,
+    "name": "abc",
+    "preis": "50",
+    "farbe": "abc",
+    "numberprodukte": 1
+  },
+  {
+    "id": 6,
+    "name": "hhhhhhhhhhhh",
+    "preis": "80",
+    "farbe": "hhhhhhhhhh",
+    "numberprodukte": 1
+  },
+  {
+    "id": 7,
+    "name": "tshirt",
+    "preis": "13",
+    "farbe": "abc",
+    "numberprodukte": 1
   }
 ]
