@@ -104,7 +104,14 @@ app.get("/produkte/search", (req, res) => {
     try {
         const allProdukte = readFile();
         const name = req.query.name;
+        const preis = req.query.preis;
         const foundProdukt = allProdukte.filter(produkt => produkt.name.includes(name))
+        const foundProduktPreis = allProdukte.filter(produkt => produkt.preis <= preis)
+        if (foundProduktPreis) {
+            res.json(foundProduktPreis)
+        }
+
+
         if (foundProdukt) {
             res.json(foundProdukt)
         } else {
