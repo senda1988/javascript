@@ -106,7 +106,7 @@ app.get("/produkte/search", (req, res) => {
         let { name, preis } = req.query;
         let filteredProdukte = allProdukte;
 
-        // Vérifier et filtrer par nom
+
         if (name) {
             name = name.toLowerCase();
             filteredProdukte = filteredProdukte.filter(produkt =>
@@ -114,7 +114,7 @@ app.get("/produkte/search", (req, res) => {
             );
         }
 
-        // Vérifier et filtrer par prix
+
         if (preis) {
             const preisNumber = parseFloat(preis);
             if (!isNaN(preisNumber)) {
@@ -124,7 +124,7 @@ app.get("/produkte/search", (req, res) => {
             }
         }
 
-        // Vérifier si des produits ont été trouvés
+
         if (filteredProdukte.length === 0) {
             return res.status(404).json({ message: "Kein Produkt gefunden" });
         }

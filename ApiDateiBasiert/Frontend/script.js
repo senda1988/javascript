@@ -100,7 +100,7 @@ window.onload = () => {
                     })
                         .then(res => res.json())
                         .then(() => {
-                            // para.remove(); 
+
                             const para5 = document.createElement("p")
 
 
